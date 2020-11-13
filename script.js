@@ -23,7 +23,7 @@ var workHour = {
 
 // save button then get value from text area and hour
 $(".saveBtn").click(function(e) {
-console.log(e);
+// console.log(e);
     // get userTodo input from textarea tag which is siblings of button
     userTodo = $(this).siblings("textarea").val();
     // get hourTodo input from div tag which is siblings of button
@@ -63,8 +63,8 @@ function saveSchedule() {
 //correct one military time output as number
 var present = moment().hour();
 
-console.log(present);
-console.log(typeof present);
+// console.log(present);
+// console.log(typeof present);
 
 // var x = "8 AM"
 
@@ -74,12 +74,12 @@ for (i = 1; i <=17; i++) {
     timeId = "#time" + i;
     textEntryId = "#textEntry" + i;
 
-    console.log(timeId);
+    // console.log(timeId);
 
     var x = $(timeId).text();
     
-    console.log("before " + x);
-    console.log("before type " + typeof x);
+    // console.log("before " + x);
+    // console.log("before type " + typeof x);
 
     convertTimeStringToNumber(x);
     
@@ -118,25 +118,29 @@ for (i = 1; i <=17; i++) {
         } else if (x === "11 PM") {
             x = 23;
         } else if (x === "12 AM") {
-            x = 24;
+            x = 0;
         }
     
     }
-    
-    console.log("after " + x);
-    console.log("after type " + typeof x);
+    // console.log("after " + x);
+    // console.log("after type " + typeof x);
     
     
     if (present < x) {
     
+        // console.log("present future =" + present)
+
         $(textEntryId).addClass("future-hour");
     
     } else if (present === x) {
-    
+        // console.log("present =" + present)
+
         $(textEntryId).addClass("present-hour");
     
     } else if (present > x) {
     
+        // console.log("present past =" + present)
+
         $(textEntryId).addClass("past-hour");
     
     }
@@ -145,30 +149,4 @@ for (i = 1; i <=17; i++) {
 }
 
 
-
-
-
-// function convertHourToNumber(x) {
-
-//     switch(workHour) {
-//         case "8 AM": return 8;
-//         case "9 AM": return 9;
-//         case "10 AM": return 10;
-//         case "11 AM": return 11;
-//         case "12 PM": return 12;
-//         case "1 PM": return 13;
-//         case "2 PM": return 14;
-//         case "3 PM": return 15;
-//         case "4 PM": return 16;
-//         case "5 PM": return 17;
-//         case "6 PM": return 18;
-//         case "7 PM": return 19;
-//         case "8 PM": return 20;
-//         case "9 PM": return 21;
-//         case "10 PM": return 22;
-//         case "11 PM": return 23;
-//         case "12 PM": return 24;
-//     }
-
-// }
 
