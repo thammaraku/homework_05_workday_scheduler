@@ -1,6 +1,7 @@
 // add date to the jumbotron
 $('#currentDay').text(moment().format('dddd') +", "+ moment().format('MMMM Do YYYY,h:mm:ss a'));
 
+
 var workHour = {
     "8 AM": "",
     "9 AM": "",
@@ -20,6 +21,55 @@ var workHour = {
     "11 PM": "",
     "12 AM": "",
 };
+
+updateTask();
+
+function updateTask() {
+
+    if(!localStorage.getItem('workHour')) {
+        localStorage.setItem('workHour', JSON.stringify(workHour));
+    }
+
+//     // get workHour JSON string from localstorage convert to js object
+    // workHour = localStorage.getItem('workHour');
+    workHour = JSON.parse(localStorage.getItem('workHour'));
+
+    console.log(workHour);
+    // console.log("workHour11PM =" + workHour["11 PM"]);
+    // $('#textEntry16').text(workHour["11 PM"]);
+    // console.log("workHour12PM =" + workHour["12 AM"]);
+    // $('#textEntry17').text(workHour["12 AM"]);
+
+    for (i = 1; i <=17; i++) {
+
+        timeId = "#time" + i;
+        textEntryId = "#textEntry" + i;
+        var x = $(timeId).text();
+        // var y = textEntryId;
+
+        // console.log("textEntryId = " + textEntryId);
+        // console.log("timeId = " + timeId);
+        // console.log("x =" + x);
+        // console.log("workHourx = " + workHour[x]);
+
+        $(textEntryId).text(workHour[x]);
+
+    }
+
+    // workHourObj = JSON.parse(localStorage.getItem('workHour'));
+    // console.log(workHourObj);
+
+    // console.log(workHourObj["11 PM"]);
+    // $('#textEntry16').text(workHourObj["11 PM"]);
+
+//     localStorage.setItem('workHour', JSON.stringify(workHourObj));
+
+}
+
+
+
+
+
 
 // save button then get value from text area and hour
 $(".saveBtn").click(function(e) {
@@ -118,7 +168,7 @@ for (i = 1; i <=17; i++) {
         } else if (x === "11 PM") {
             x = 23;
         } else if (x === "12 AM") {
-            x = 0;
+            x = 24;
         }
     
     }
