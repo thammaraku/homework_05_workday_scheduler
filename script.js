@@ -1,9 +1,18 @@
 // add date to the jumbotron
 $('#currentDay').text(moment().format('dddd') +", "+ moment().format('MMMM Do YYYY,h:mm:ss a'));
 
+// THINGS CAN BE IMPROVED
+// funtion check if it's still on the same date by
+// save date as an variable in local storage
+// compare if it's the same exeute function update task
+//otherwise put new workHour to blank
+//then save new date to the variable
+
+// how to make clock keep running
+// use settime interval to push the variable moment current date on every seconds
+
 
 var workHour = {
-    "8 AM": "",
     "9 AM": "",
     "10 AM": "",
     "11 AM": "",
@@ -13,13 +22,6 @@ var workHour = {
     "3 PM": "",
     "4 PM": "",
     "5 PM": "",
-    "6 PM": "",
-    "7 PM": "",
-    "8 PM": "",
-    "9 PM": "",
-    "10 PM": "",
-    "11 PM": "",
-    "12 AM": "",
 };
 
 updateTask();
@@ -119,7 +121,7 @@ var present = moment().hour();
 // var x = "8 AM"
 
 
-for (i = 1; i <=17; i++) {
+for (i = 1; i <= 10; i++) {
 
     timeId = "#time" + i;
     textEntryId = "#textEntry" + i;
@@ -135,9 +137,7 @@ for (i = 1; i <=17; i++) {
     
     function convertTimeStringToNumber() {
     
-        if (x === "8 AM") {
-            x = 8;
-        } else if (x === "9 AM") {
+        if (x === "9 AM") {
             x = 9;
         } else if (x === "10 AM") {
             x = 10;
@@ -155,20 +155,6 @@ for (i = 1; i <=17; i++) {
             x = 16;
         } else if (x === "5 PM") {
             x = 17;
-        } else if (x === "6 PM") {
-            x = 18;
-        } else if (x === "7 PM") {
-            x = 19;
-        } else if (x === "8 PM") {
-            x = 20;
-        } else if (x === "9 PM") {
-            x = 21;
-        } else if (x === "10 PM") {
-            x = 22;
-        } else if (x === "11 PM") {
-            x = 23;
-        } else if (x === "12 AM") {
-            x = 24;
         }
     
     }
