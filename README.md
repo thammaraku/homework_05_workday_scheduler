@@ -19,7 +19,7 @@ https://github.com/thammaraku/homework_05_workday_scheduler
 https://thammaraku.github.io/homework_05_workday_scheduler/
 
 ### Screenshots
-![A user clicks on slots on the color-coded calendar and edits the events.] (./assets/homework05_workday_scheduler.gif)
+![A user clicks on slots on the color-coded calendar and edits the events.] (./assets/homework05_workday_scheduler.jpg)
 
 ## Knowledge learned from this assignment
 1. Working with object by Javascript
