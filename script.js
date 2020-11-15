@@ -1,5 +1,5 @@
 // add date to the jumbotron
-$('#currentDay').text(moment().format('dddd') +", "+ moment().format('MMMM Do YYYY,h:mm:ss a'));
+$('#currentDay').text(moment().format('dddd') +", "+ moment().format('MMMM Do YYYY'));
 
 // THINGS CAN BE IMPROVED
 // funtion check if it's still on the same date by
